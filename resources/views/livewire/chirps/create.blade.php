@@ -14,12 +14,19 @@ new class extends Component
         $this->message = '';
     } 
 }; ?>
+
 <div>
     @if (session()->has('success'))
-        <div class="mb-4 text-green-600 bg-green-100 border border-green-300 rounded p-3">
-            {{ session('success') }}
-        </div>
-    @endif
+    <div
+        x-data="{ show: true }"
+        x-init="setTimeout(() => show = false, 3000)"
+        x-show="show"
+        x-transition
+        class="mb-4 text-green-600 bg-green-100 border border-green-300 rounded p-3"
+    >
+        {{ session('success') }}
+    </div>
+@endif
     
     <form wire:submit="store">
         <textarea
