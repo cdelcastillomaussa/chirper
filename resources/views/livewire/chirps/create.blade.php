@@ -12,6 +12,7 @@ new class extends Component
         auth()->user()->chirps()->create($validated);
         session()->flash('success', '¡Chirp agregado correctamente!');
         $this->message = '';
+        $this->dispatch('chirp-created');
     } 
 }; ?>
 
