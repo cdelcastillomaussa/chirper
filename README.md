@@ -1,4 +1,4 @@
-# Laravel Chirper
+# Laravel Chirper with LiveWire
 
 Con Laravel v-12 y package Laravel Breeze, el package Breeze facilita la implementación de funcionalidades básicas de autenticación (registro, inicio de sesión, restablecimiento de contraseñas, etc.) en una aplicación web.
 
@@ -16,10 +16,11 @@ Con Laravel v-12 y package Laravel Breeze, el package Breeze facilita la impleme
 4. Crear llave.
    `php artisan key:generate`
 
-5. Configurar la base de datos en el archivo .env en este caso decidi usar ##mysql
+5. Configurar la base de datos en el archivo .env
+   `Decidi usar mysql`
 
 6. Ejecuta las migraciones.
-   `php artisan migrate && php artisan migrate --seed`
+   `php artisan migrate`
 
 ## Ejecutar proyecto
 
