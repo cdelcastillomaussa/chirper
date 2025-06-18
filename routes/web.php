@@ -1,15 +1,16 @@
 <?php
 
+use App\Http\Controllers\ChirpController;
 use Illuminate\Support\Facades\Route;
 
+// Rutas públicas (sin auth)
 Route::view('/', 'welcome');
 
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
+// Rutas protegidas por auth y verificación de email
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('chirps', [ChirpController::class, 'index'])->name('chirps');
+    Route::view('profile', 'profile')->name('profile');
+    Route::view('dashboard', 'dashboard')->name('dashboard');
+});
 
-Route::view('profile', 'profile')
-    ->middleware(['auth'])
-    ->name('profile');
-
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
