@@ -69,10 +69,10 @@ new class extends Component {
                             </x-slot>
                             <x-slot name="content">
                                 <x-dropdown-link wire:click="edit({{ $chirp->id }})">
-                                    {{ __('Edit') }}
+                                    {{ __('Editar') }}
                                 </x-dropdown-link>
                                  <x-dropdown-link wire:click="delete({{ $chirp->id }})" wire:confirm="¿Estás seguro de eliminar este chirp?"> 
-                                    {{ __('Delete') }}
+                                    {{ __('Eliminar') }}
                                 </x-dropdown-link> 
                             </x-slot>
                         </x-dropdown>
